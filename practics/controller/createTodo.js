@@ -1,11 +1,11 @@
-const Todo=require('../models/Todo')
+const crud=require('../models/crud')
 
 exports.createTodo=async(req ,res)=>{
     try{
          //extrect title and description from requst body
          const {title,description}=req.body;
          //create a new todo obj and insert in db
-         const response=await Todo.create({title ,description})
+         const response=await crud.create({title ,description})
          //send response for successgul
          res.status(200).json(
             {
